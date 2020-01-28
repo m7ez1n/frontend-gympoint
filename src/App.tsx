@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
+import { Router } from "react-router-dom";
+import history from "./services/history";
 
-import { Signin } from './pages/Signin';
-import GlobalStyle from './styles/global';
+import { Signin } from "./pages/Signin";
+import GlobalStyle from "./styles/global";
 
 const App: React.FC = () => {
   return (
     <>
-      <GlobalStyle />
-      <Signin />
+      <Router history={history}>
+        <GlobalStyle />
+        <Signin />
+      </Router>
     </>
   );
-}
+};
 
 export default App;
